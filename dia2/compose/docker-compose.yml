@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  server:
+    build: server/
+    container_name: cont_server
+    command: python ./server.py
+    ports:
+      - 9090:9090
+    networks:
+      - net_app
+
+  client:
+    build: client/
+    container_name: cont_cliente
+    command: python ./client.py
+    depends_on:
+      - server
+    networks:
+      - net_app  
+
+networks:
+    net_app:
+       external: true
