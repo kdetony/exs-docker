@@ -34,3 +34,13 @@ http://IP_SERVER_MANAGER/books
 ```
 `http://IP_SERVER_MANAGER/movies
 ```
+
+## Scale service
+
+Scaling apis: books and movies
+```
+docker service scale api_books=3
+
+docker service scale api_movies=5
+```
+
